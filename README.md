@@ -1,2 +1,1 @@
-# fdrop
-Airdrop for windows
+# Fdrop will basically be Aidrop just for Windows. Coming soon!
