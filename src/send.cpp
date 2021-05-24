@@ -54,7 +54,7 @@ void send(int id, string address, string file) {
 	hdr->dLen = 7;
 	hdr->hdrLen = sizeof(hdr) * sizeof(int);
 
-	memcpy(&buf[hdr->hdrLen], "tseting.txt", 11);
+	memcpy(&buf[hdr->hdrLen], file.c_str(), file.length());
 
 	if (send(sock, buf, 500, NULL) == SOCKET_ERROR) {
 		cout << "Error sending file, error code " << WSAGetLastError() << endl;
