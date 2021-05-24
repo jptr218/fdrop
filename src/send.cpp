@@ -50,8 +50,8 @@ void send(int id, string address, string file) {
 	fdrop_req_hdr* hdr = (fdrop_req_hdr*)buf;
 	hdr->hdrLen = 0;
 	hdr->from = id;
-	hdr->fnLen = 11;
-	hdr->dLen = 7;
+	hdr->fnLen = file.length();
+	hdr->dLen = 7; //needs fsize func
 	hdr->hdrLen = sizeof(hdr) * sizeof(int);
 
 	memcpy(&buf[hdr->hdrLen], file.c_str(), file.length());
