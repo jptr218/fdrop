@@ -51,7 +51,7 @@ void send(int id, string address, string file) {
 	hdr->hdrLen = 0;
 	hdr->from = id;
 	hdr->fnLen = file.length();
-	hdr->dLen = 7; //needs fsize func
+	hdr->dLen = fsize(f);
 	hdr->hdrLen = sizeof(hdr) * sizeof(int);
 
 	memcpy(&buf[hdr->hdrLen], file.c_str(), file.length());

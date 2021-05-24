@@ -53,3 +53,10 @@ int alert(string message, int type) {
     MessageBeep(MB_ICONINFORMATION);
     return MessageBoxW(NULL, getWstr(message), L"Fdrop", type);
 }
+
+int fsize(FILE* f) {
+    fseek(f, 0, SEEK_END);
+    int s = ftell(f);
+    rewind(f);
+    return s;
+}

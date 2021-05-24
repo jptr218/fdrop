@@ -23,6 +23,8 @@ string extractBytes(string buf, DWORD bytes);
 int getId();
 string getUsername();
 
+int fsize(FILE* f);
+
 int alert(string message, int type);
 
 void listen();
